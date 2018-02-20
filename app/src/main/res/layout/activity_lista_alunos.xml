@@ -15,10 +15,15 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:text="+"
+        android:elevation="6dp"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/fundo"/>
+        android:background="@drawable/fundo"
+        android:stateListAnimator="@null"
+        android:id="@+id/add_aluno"/>
 
 </RelativeLayout>

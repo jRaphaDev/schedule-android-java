@@ -1,10 +1,11 @@
 package com.freitas.agenda;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
-
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class ListaAlunosActivity extends AppCompatActivity {
@@ -20,6 +21,15 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alunos);
         listaAlunos.setAdapter(arrayAdapter);
+
+        final Button addAluno = findViewById(R.id.add_aluno);
+        addAluno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentFormulario = new Intent(ListaAlunosActivity.this, FormularioActivity.class);
+                startActivity(intentFormulario);
+            }
+        });
 
     }
 
