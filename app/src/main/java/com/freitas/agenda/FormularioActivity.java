@@ -8,14 +8,20 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.freitas.agenda.modelo.Aluno;
+
 public class FormularioActivity extends AppCompatActivity {
+
+    private FormularioHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+        helper = new FormularioHelper(this);
     }
 
     @Override
@@ -30,7 +36,10 @@ public class FormularioActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.menu_formulario:
-                Toast.makeText(FormularioActivity.this, "Aluno Salvo", Toast.LENGTH_SHORT).show();
+
+                Aluno aluno = helper.getAluno();
+
+                Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome()+ " salvo", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }
